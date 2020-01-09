@@ -1,0 +1,33 @@
+NAME
+
+odgi — utilities for manipulating GFA
+
+handle - refers to oriented nodes;
+path_handle - the path handle type, which refers to paths;
+step_handle - the step handle type, which refers to path paths;
+edge - edges link two handles together.
+
+./odgi <command> [options]
+
+--build.. convert gfa in odgi i.e. variation graph
+
+Options:
+
+-g, GFA input file
+-o, ODGI output file 
+
+LIST OF COMMANDS
+
+import odgi
+
+g = odgi.graph() - define graph
+
+g.load("file") - load file in graph
+
+g.append_step(options)
+
+-odgi.graph - default
+-odgi.path_handle
+-odgi.handle
+     
+Append a visit to a node to the given path. Returns a handle to the new final step on the path which is appended.
