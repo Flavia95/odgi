@@ -15,22 +15,45 @@ Options:
 
 -g, GFA input file
 -o, ODGI output file 
-###############################################################################################################################
 
 LIST OF COMMANDS
 
 import odgi
 
-g = odgi.graph()  
+###1. <g> = odgi.graph()  
 Define graph
 
-g.load("file")  
+##2. <g>.load("file")  
 Load file in graph
 
-<g>.append_step(options)
+##3. <g>.append_step(options)
 Append a visit to a node to the given path. Returns a handle to the new final step on the path which is appended.
 
 -odgi.graph - default
 -g.path_handle
 -g.handle - look handle
    
+ ##4. <g>.get_handle(options)
+Return the handle for the given node id
+
+-odgi.graph SELF 
+-node_id INT- mandatory
+-is_reverse BOOL - not obligatory
+False(+) or True(-) based on the orientation of the DNA
+
+##5. <g>.get_id(options) 
+Return id of given handle
+
+-odgi.graph - already defined
+-handle - Look g.get_handle
+
+##6. <g>.to_gfa()
+Display as GFA
+
+-without parameters
+
+##-g.get_sequence(options)
+Return sequence of given handle
+
+-odgi.graph SELF
+-handle
