@@ -20,40 +20,42 @@ LIST OF COMMANDS
 
 import odgi
 
-###1. <g> = odgi.graph()  
-Define graph
+- *<<g = odgi.graph()>>*..define graph
 
-##2. <g>.load("file")  
-Load file in graph
+- *<<g., load ('file')>>*..load file in graph
 
-##3. <g>.append_step(options)
-Append a visit to a node to the given path. Returns a handle to the new final step on the path which is appended.
+- *<<g., append_step(options)>>*..append a visit to a node to the given path. Returns a handle to the new final step on the path which is appended.
 
--odgi.graph - default
--g.path_handle
--g.handle - look handle
-   
- ##4. <g>.get_handle(options)
-Return the handle for the given node id
+- *<<g., apply_ordering(options)>>*..reorder the graph's internal structure
+odgi.graph SELF
+order: List[odgi.handle]
+bool: False 
 
--odgi.graph SELF 
--node_id INT- mandatory
--is_reverse BOOL - not obligatory
-False(+) or True(-) based on the orientation of the DNA
+- *<<g., apply_ordering(options)>>*..change the node to which the indicated handle corresponds,the handle becomes the node's local forward orientation. Updates all links and path steps to match the new orientation.
+odgi.graph SELF 
+g.handle
 
-##5. <g>.get_id(options) 
-Return id of given handle
+- *<<g., get_handle(options)>>*..return the handle for the given node id
+odgi.graph SELF 
+node_id INT- mandatory
+is_reverse BOOL - False(+) or True(-) based on the orientation of the DNA
 
--odgi.graph - already defined
--handle - Look g.get_handle
+- *<<g., get_id(options)>>*..return id of given handle
+odgi.graph - already defined
+handle - Look g.get_handle
 
-##6. <g>.to_gfa()
-Display as GFA
+- *<<g., to_gfa()>>*..display as GFA
 
--without parameters
+- *<<g., get_sequence(options)>>*..return sequence of given handle
+odgi.graph SELF
+handle
 
-##-g.get_sequence(options)
-Return sequence of given handle
+- *<<g., get_node_count()>>..return the count of nodes in the graph
 
--odgi.graph SELF
--handle
+- *<<g., get_path_count()>>..return the count of path in the graph
+
+-
+
+
+
+
