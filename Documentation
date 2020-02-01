@@ -23,38 +23,153 @@ import odgi
 - *<<g = odgi.graph()>>*..define graph
 
 - *<<g., load ('file')>>*..load file in graph
+  
+- *<<g., append_step(options)>>*..append a visit to a node to the given path and add a path steps.
 
-- *<<g., append_step(options)>>*..append a visit to a node to the given path. Returns a handle to the new final step on the path which is appended.
+g. = self
+g.path_handle = pass the path name as a string
+g.handle = pass a value of a node identifier (id)   
+ 
+- *<<g., apply_ordering(options)>>*..reorder the graph's internal structure to match that given. Optionally compact the id space of the graph to match the ordering, from 1->|ordering|. (?)
 
-- *<<g., apply_ordering(options)>>*..reorder the graph's internal structure
-odgi.graph SELF
-order: List[odgi.handle]
-bool: False 
+g.graph = self                          
+order: List[odgi.handle], 
+compact_ids: bool = False) -> None
+ 
+- *<<g., apply_orientation(options)>>*..Modify the node to which the specified handle corresponds and update all route links and steps to match the new orientation. 
+ 
+g.graph = self 
+g.handle = pass a value of a node identifier
+       
+- *<<g., apply_path_ordering(...)>> Reorder the graph's paths as given.
+ (self: odgi.graph, arg0: List[odgi.path_handle]) -> None (????)
 
-- *<<g., apply_ordering(options)>>*..change the node to which the indicated handle corresponds,the handle becomes the node's local forward orientation. Updates all links and path steps to match the new orientation.
-odgi.graph SELF 
+- * <<g., clear(...)>>*..Clears all added nodes and edges and does not update the paths already stored.
+
+g.graph = self
+      
+- * <<g., clear_paths(...)>>*..Clears all path thath already stored
+
+g.graph) = self 
+ 
+-* <<g. combine_handles(...)
+ |      combine_handles(self: odgi.graph, arg0: List[odgi.handle]) -> odgi.handle
+ |      
+ |      Join handles into a new node, returning the handle of the new node.
+ |  (?)
+
+-* <<g. create_edge(options)>>*..Create edge that connecting two given handles in the given orientations.
+ 
+g.graph = self
+g.handle = first handle
+g.handle = second handle
+
+-* <<g. create_handle(oprtions)>>*..Create a new node and return the handle
+g.graph = self
+str = given sequence 
+
+-* <<g. create_path_handle(options)>>*..Create a path but the name given to the path must not already exist
+   
+-* <<g. destroy_edge(options)>>*..Remove the edge connecting the given handles 
+
+g.graph = self 
+g.handle = first, pass a value of a node identifier
+g.handle = second, pass a value of a node identifier
+ 
+-* <<g. destroy_handle(options)>>*..Remove the node belonging to the given handle and all of its edges. Invalidates the destroyed handle.
+
+g.graph = self 
+g.handle = pass a value of a node identifier
+ 
+-* <<g.destroy_path(options)>>*..Remove the given path. Invalidates node and handles to the path.
+    
+g.graph = self 
+g.path_handle = pass a value of a node identifier
+       
+-* <<g.divide_handle(options)>>*..Split a node without breaking the paths that overlap it. Returns the handles to the new parts.    
+ 
+g.graph = self 
+g.get.handle = id 
+List[g.handle] = [3,7]    (?)
+   
+
+-* <<g.edge_handle(options)>>*..For the given pair of handle return the edge
+ 
+g.graph = Self
+arg0: odgi.handle 
+arg1: odgi.handle
+     
+flip(...)  ??????
+
+-* <<g, follow_edges(options)>>*.. Starting at a given node, list the edges
+ 
+g.graph = self 
+odgi.handle  
+bool = T o F. False, by default, we get the forward handle
+Callable[[g.handle], bool]) -> bool
+
+-* <<g, for_each_handle(options)>>*..Iterate over all the nodes in the graph, will invoke a callback for each forward handle in our graph.
+odgi.graph
+bool = 
+iteratee: Callable[[odgi.handle], bool], parallel: bool = False) -> bool
+         
+-* <<g, for_each_path_handle(...)>>*..Iterate over all the path in the graph, will invoke the callback for each path in the graph.
+odgi.graph
+bool = 
+iteratee: Callable[[odgi.handle], bool], parallel: bool = False) -> bool 
+             
+-* <<g, for_each_step_in_path(...)>>*..Iterate over all steps in the graph, will invoke the callback for each step in the graph.
+odgi.graph
+bool = 
+iteratee: Callable[[odgi.handle], bool], parallel: bool = False) -> bool
+   
+-* <<g, for_each_step_on_handle(...)>>*..Getting the steps on each handle, will invoke the callback for each step in the graph.
+odgi.graph
+bool = 
+iteratee: Callable[[odgi.handle], bool], parallel: bool = False) -> bool    
+       
+ 
+-* <<forward(options)>>*..Return the forward of the handle.
+odgi.graph: self
+g.handle): node id
+
+-* <<get_degree(options)>>*..Return the degree of the given handle
+
+g.graph: self
+g.handle: 
+bool: True or False
+ 
+   
+-* <<g., get_handle(options)>>*..Pass a value of a node identifier (id) and return the handle for the given node id.   
+
+g.graph: self
+node_id: int
+bool = False or True
+
+-* <<get_handle_of_step(options)>>*.. Return the handle (both node and orientation) of the step
+g.graph: self
+g.step_handle: 
+
+-* <<get_id(options)>>*..Return the id of the given handle
+
+g.graph
 g.handle
 
-- *<<g., get_handle(options)>>*..return the handle for the given node id
-odgi.graph SELF 
-node_id INT- mandatory
-is_reverse BOOL - False(+) or True(-) based on the orientation of the DNA
+  
+-* <<get_is_circular(options)>>*..If the path is circular (it start with a node and return on these node) returns True.      
 
-- *<<g., get_id(options)>>*..return id of given handle
-odgi.graph - already defined
-handle - Look g.get_handle
+g.graph:
+g.path_handle:
+       
+-* <<g.get_is_reverse(options)>>*..False, by default, we get the forward handle and return True if the handle refers to the node reverse complement. 
 
-- *<<g., to_gfa()>>*..display as GFA
+g.graph
+g.handle
 
-- *<<g., get_sequence(options)>>*..return sequence of given handle
-odgi.graph SELF
-handle
+-*<<get_length(options)>>*.. Return the length of the node referred to by the handle
 
-- *<<g., get_node_count()>>..return the count of nodes in the graph
-
-- *<<g., get_path_count()>>..return the count of path in the graph
-
--
+g.graph, 
+g.handle,
 
 
 
