@@ -10,45 +10,45 @@ Options:
 -o, ODGI output file 
 
 
-- *<<g = odgi.graph()>>*  .. define graph
-- *<<load,load>>*                .. load the graph from the given file
-- *<<append_step,append_step>>*       .. append a visit to a node to the given path and add a path steps
-- *<<apply_ordering,apply_ordering>>*     .. reorder the graph's internal structure to match that given
-- *<<apply_orientation,apply_orientation>>*    .. modify the node to which the specified handle corresponds  
-- *<<apply_path_ordering,apply_path_ordering>>*  .. reorder the graph's paths as given 
-- *<<clear,clear>>*          .. clears all added nodes and edgesr
-- *<<clear_paths,clear:paths>>*    .. clears all path thath already stored 
-- *<<combine_handles,combine_handles>>*  .. join the handles specified in a new node
-- *<<create_edge,create_edge>>*      ..  create edge that connecting two given handles
-- *<<create_handle,create_handle>>*  ..  create a new node and return the handle.
-- *<<create_path_handle,create_path_handle>>*  ..  create a path but the name given to the path must not already exist
-- *<<destroy_handle,destroy_handle>>*  ..  remove the node belonging to the given handle and all of its edges
-- *<<destroy_path,destroy_path>>*        ..  remove the given path
-- *<<divide_handle,divide_handle>>*    ..  split a node (remember that the node is associated with a sequence) and returns the list of handle
-- *<<edge_handle,edge_handle>>*   ..  for the given pair of handle return the edge
-- *<<flip,flip>>*      ..  reverse the orientation of the handle
-- *<<follow_edges,follow_edges>>*   .. starting at a given node, list the edges
-- *<<for_each_handle,for_each_handle>>*          ..  iterate over all the nodes in the graph
+- *<<g = odgi.graph()>>*                                 .. define graph
+- *<<load,load>>*                                        .. load the graph from the given file
+- *<<append_step,append_step>>*                          .. append a visit to a node to the given path and add a path steps
+- *<<apply_ordering,apply_ordering>>*                    .. reorder the graph's internal structure to match that given
+- *<<apply_orientation,apply_orientation>>*              .. modify the node to which the specified handle corresponds  
+- *<<apply_path_ordering,apply_path_ordering>>*          .. reorder the graph's paths as given 
+- *<<clear,clear>>*                                      .. clears all added nodes and edgesr
+- *<<clear_paths,clear:paths>>*                          .. clears all path thath already stored 
+- *<<combine_handles,combine_handles>>*                  .. join the handles specified in a new node
+- *<<create_edge,create_edge>>*                          ..  create edge that connecting two given handles
+- *<<create_handle,create_handle>>*                      ..  create a new node and return the handle.
+- *<<create_path_handle,create_path_handle>>*            ..  create a path but the name given to the path must not already exist
+- *<<destroy_handle,destroy_handle>>*                    ..  remove the node belonging to the given handle and all of its edges
+- *<<destroy_path,destroy_path>>*                        ..  remove the given path
+- *<<divide_handle,divide_handle>>*                      ..  split a node (remember that the node is associated with a sequence) and returns the list of handle
+- *<<edge_handle,edge_handle>>*                          ..  for the given pair of handle return the edge
+- *<<flip,flip>>*                                        ..  reverse the orientation of the handle
+- *<<follow_edges,follow_edges>>*                        .. starting at a given node, list the edges
+- *<<for_each_handle,for_each_handle>>*                  ..  iterate over all the nodes in the graph
 - *<<for_each_path_handle,for_each_path_handle>>*        ..  iterate over all the path in the graph 
 - *<<for_each_step_in_path,for_each_step_in_path>>*      ..  iterate over all steps in the graph 
-- *<<for_each_step_on_handle,for_each_step_on_handle>>*        ..  getting the steps on each handle, 
-- *<<forward,forward>>*    .. return the forward of the handle  
-- *<<get_degree,get_degree>>*  .. return the degree of the given handle 
-- *<<get_handle,get_handle>>*          .. pass a value of a node identifier(id)
-- *<<get_handle_of_step,get_handle_of_step>>*    .. return the handle of the step 
-- *<<get_id,get_id>>*  .. return the id of the given node
-- *<<get_is_circular,get_is_circular>>*      ..  if the path is circular returns True
-- *<<get_is_reverse,get_is_reverse>>*  ..  false,by default,we get the forward handle.
-- *<<get_lenght,get_lenght>>*  ..  return the lenght of the node referred to by the handle
-- *<<get_next_step,get_next_step>>*  ..  returns a handle to the next step on the path.
-- *<<get_node_count,get_node_count>>*        ..  return the numbers of the nodes in the graph
-- *<<get_path,get_path>>*    ..  return the path of a given step handle  
-- *<<get_path_count,get_path_count>>*   ..  return the path count in the graph
-- *<<get_path_handle,get_path_handle>>*   .. return the path handle for the named path
-- *<<get_path_handle_of_step,get_path_handle_of_step>>*          ..  returns a handle to the path that an step is on
-- *<<get_path_name,get_path_name>>*        ..  return the path name for a given path handle 
-- *<<get_previous_step,get_previous_step>>*      ..  return a handle to the previous step on the path 
-- *<<get_sequence,get_sequence>>*        ..  return sequence of the given id of the handle 
+- *<<for_each_step_on_handle,for_each_step_on_handle>>*  ..  getting the steps on each handle, 
+- *<<forward,forward>>*                                  .. return the forward of the handle  
+- *<<get_degree,get_degree>>*                            .. return the degree of the given handle 
+- *<<get_handle,get_handle>>*                            .. pass a value of a node identifier(id)
+- *<<get_handle_of_step,get_handle_of_step>>*            .. return the handle of the step 
+- *<<get_id,get_id>>*                                    .. return the id of the given node
+- *<<get_is_circular,get_is_circular>>*                  ..  if the path is circular returns True
+- *<<get_is_reverse,get_is_reverse>>*                    ..  false,by default,we get the forward handle.
+- *<<get_lenght,get_lenght>>*                            ..  return the lenght of the node referred to by the handle
+- *<<get_next_step,get_next_step>>*                      ..  returns a handle to the next step on the path.
+- *<<get_node_count,get_node_count>>*                    ..  return the numbers of the nodes in the graph
+- *<<get_path,get_path>>*                                ..  return the path of a given step handle  
+- *<<get_path_count,get_path_count>>*                    ..  return the path count in the graph
+- *<<get_path_handle,get_path_handle>>*                  .. return the path handle for the named path
+- *<<get_path_handle_of_step,get_path_handle_of_step>>*  ..  returns a handle to the path that an step is on
+- *<<get_path_name,get_path_name>>*                      ..  return the path name for a given path handle 
+- *<<get_previous_step,get_previous_step>>*              ..  return a handle to the previous step on the path 
+- *<<get_sequence,get_sequence>>*                        ..  return sequence of the given id of the handle 
 
 [[load]]
 
