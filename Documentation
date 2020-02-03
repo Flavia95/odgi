@@ -342,7 +342,7 @@ iterate over all the nodes in the graph, will invoke a callback for each forward
 
 bool: True or False. False, by default we get the forward handle in our graph
 
-*-ar1:: 
+*-arg1:: 
 
 Callable[[g.handle], bool])
 
@@ -358,11 +358,11 @@ iterate over all the paths in the graph, will invoke a callback for each path in
 
 bool: True or False. False, by default we get the forward handle in our graph
 
-*-ar1:: 
+*-arg1:: 
 
 Callable[[g.handle], bool])
 
-[[for_each_step in path]]
+[[for_each_step_in_path]]
 
 === import odgi
 === g = odgi.graph()
@@ -374,15 +374,247 @@ iterate over all steps in the graph, will invoke the callback for each step in t
 
 bool: True or False. False, by default we get the forward handle in our graph
 
-*-ar1:: 
+*-arg1:: 
 
 Callable[[g.handle], bool])
 
+[[for_each_step_on_handle]]
+
+=== import odgi
+=== g = odgi.graph()
+=== g.load('/path/to/gfa')
+
+getting the steps on each handle(a reference to a single step of a path on one node traversal), will invoke the callback for each step in the graph
+
+*-arg0::
+
+bool: True or False. False, by default we get the forward handle in our graph
+
+*-arg1:: 
+
+Callable[[g.handle], bool])
+
+[[forward]]
+
+=== import odgi
+=== g = odgi.graph()
+=== g.load('/path/to/gfa')
+
+return the forward of the handle
+
+*-arg0::
+
+g.handle: pass a value of a node identifier(id)
+
+[[get_degree]]
+
+=== import odgi
+=== g = odgi.graph()
+=== g.load('/path/to/gfa')
+
+return the degree of the given handle
+
+*-arg0::
+
+g.handle: pass a value of a node identifier(id)
+
+*-arg1::
+
+bool: True o False. False, by default, we get the forward handle
 
 
+[[get_handle]]
+
+=== import odgi
+=== g = odgi.graph()
+=== g.load('/path/to/gfa')
+
+pass a value of a node identifier(id) and return the handle for the given node id
+
+*-arg0::
+
+node: node identifier(id)
+
+*-arg1::
+
+bool: True o False. False, by default, we get the forward handle
 
 
+[[get_handle_of_step]]
 
+=== import odgi
+=== g = odgi.graph()
+=== g.load('/path/to/gfa')
+
+return the handle (both node and orientation) of the step
+
+*-arg0::
+
+g.step_handle: a reference to a single step of a path on one node traversal
+
+
+[[get_id]]
+
+=== import odgi
+=== g = odgi.graph()
+=== g.load('/path/to/gfa')
+
+return the id of the given handle
+
+*-arg0::
+
+g.handle: pass a value of a node identifier (id) of an handle
+
+
+[[get_is_circular]]
+
+=== import odgi
+=== g = odgi.graph()
+=== g.load('/path/to/gfa')
+
+if the path is circular(it start with a node and return on these node) returns true
+
+*-arg0::
+
+g.path_handle: a reference to a path, pass a name for a given path(str)
+
+
+[[get_is_reverse]]
+
+=== import odgi
+=== g = odgi.graph()
+=== g.load('/path/to/gfa')
+
+false, by default, we get the forward handle and return true if the handle refers to the node reverse complement
+
+*-arg0::
+
+g.handle: pass a value of a node identifier(id)
+
+
+[[get_length]]
+
+=== import odgi
+=== g = odgi.graph()
+=== g.load('/path/to/gfa')
+
+return the length of the node referred to by handle 
+
+*-arg0::
+
+g.handle: pass a value of a node identifier(id)
+
+[[get_next_step]]
+
+=== import odgi
+=== g = odgi.graph()
+=== g.load('/path/to/gfa')
+
+returns a handle to the next step on the path. Calling on an end marker step returns the same and marker
+
+*-arg0::
+
+g.step_handle: a reference to a single step of a path on one node traversal
+
+
+[[get_node_count]]
+
+=== import odgi
+=== g = odgi.graph()
+=== g.load('/path/to/gfa')
+
+return the number of nodes in the graph
+
+example = g.get_node_count()
+15 (total number of the nodes)
+
+
+[[get_path]]
+
+=== import odgi
+=== g = odgi.graph()
+=== g.load('/path/to/gfa')
+
+Paths are a series of steps which link a path identifier and a handle. Return the path of a given step handle
+
+*-arg0::
+
+g.step_handle: a reference to a single step of a path on one node traversal 
+
+
+[[get_path_count]]
+
+=== import odgi
+=== g = odgi.graph()
+=== g.load('/path/to/gfa')
+
+return the path count in the graph
+
+
+[[get_path_handle]]
+
+=== import odgi
+=== g = odgi.graph()
+=== g.load('/path/to/gfa')
+
+return the path handle for the named path
+
+*-arg0::
+
+str: named of the path
+
+
+[[get_path_handle_of_step]]
+
+=== import odgi
+=== g = odgi.graph()
+=== g.load('/path/to/gfa')
+
+returns a handle to the path that an step is on
+
+*-arg0::
+
+g.step_handle: a reference to a single step of a path on one node traversal 
+
+
+[[get_path_name]
+
+=== import odgi
+=== g = odgi.graph()
+=== g.load('/path/to/gfa')
+
+return the path name for a given path handle
+
+*-arg0::
+
+g.path_handle:  (a reference to a path), name for a given path (str)
+
+
+[[get_previous_step]
+
+=== import odgi
+=== g = odgi.graph()
+=== g.load('/path/to/gfa')
+
+returns a handle to the previous step on the path, calling on a dront end marker step returns the same end marker
+
+*-arg0::
+
+g.step_handle: a reference to a single step of a path on one node traversal
+
+
+[[get_sequence]
+
+=== import odgi
+=== g = odgi.graph()
+=== g.load('/path/to/gfa')
+
+nodes have numeric identifiers (or _ID_s), and associated sequences.Nodes have numeric identifiers (or _ID_s), and associated sequences.
+Return sequence of the given id of the handle. 
+
+*-arg0::
+
+g.handle: pass a value of a node identifier (id) of an handle
 
 
 
