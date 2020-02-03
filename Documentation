@@ -282,6 +282,106 @@ list of number: position of the last character of the sequence that will enter t
 
 example: g.divide_handle(g.get_handle(1), [2,5])
 
+[[edge_handle]]
+
+=== import odgi
+=== g = odgi.graph()
+=== g.load('/path/to/gfa')
+
+for the given pair of handle return the edge that connected the given handles
+
+*-arg0::
+
+g.handle: first handle, an oriented traversal of a node, 
+
+*-arg1::
+
+g.handle: second handle
+
+[[flip]]
+
+=== import odgi
+=== g = odgi.graph()
+=== g.load('/path/to/gfa')
+
+revers the orientation of the handle
+
+*-arg0::
+
+g.handle: an oriented traversal of a node, for example pass a value of a node identifier 
+
+[[follow_edges]]
+
+=== import odgi
+=== g = odgi.graph()
+=== g.load('/path/to/gfa')
+
+starting at a given node, list the edges
+
+*-arg0::
+
+g.handle: an oriented traversal of a node, for example pass a value of a node identifier (id)
+
+*-arg1::
+
+bool: True or False. False, by default we get the forward handle in our graph
+
+*-ar2:: 
+
+Callable[[g.handle], bool])
+
+[[for_each_handle]]
+
+=== import odgi
+=== g = odgi.graph()
+=== g.load('/path/to/gfa')
+
+iterate over all the nodes in the graph, will invoke a callback for each forward handle in our graph
+
+*-arg0::
+
+bool: True or False. False, by default we get the forward handle in our graph
+
+*-ar1:: 
+
+Callable[[g.handle], bool])
+
+[[for_each_path_handle]]
+
+=== import odgi
+=== g = odgi.graph()
+=== g.load('/path/to/gfa')
+
+iterate over all the paths in the graph, will invoke a callback for each path in our graph
+
+*-arg0::
+
+bool: True or False. False, by default we get the forward handle in our graph
+
+*-ar1:: 
+
+Callable[[g.handle], bool])
+
+[[for_each_step in path]]
+
+=== import odgi
+=== g = odgi.graph()
+=== g.load('/path/to/gfa')
+
+iterate over all steps in the graph, will invoke the callback for each step in the graph
+
+*-arg0::
+
+bool: True or False. False, by default we get the forward handle in our graph
+
+*-ar1:: 
+
+Callable[[g.handle], bool])
+
+
+
+
+
 
 
 
