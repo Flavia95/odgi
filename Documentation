@@ -44,11 +44,32 @@ Options:
 - *<<get_node_count,get_node_count>>*                    ..  return the numbers of the nodes in the graph
 - *<<get_path,get_path>>*                                ..  return the path of a given step handle  
 - *<<get_path_count,get_path_count>>*                    ..  return the path count in the graph
+- *<<get_path_handle,get_path_handle>>*                  ..  return the path handle for the named path
+- *<<get_path_handle_of_step,get_path_handle_of_step>>*  ..  returns a handle to the path that an step is on
+- *<<get_path_name,get_path_name>>*                      ..  return the path name for a given path handle 
+- *<<get_previous_step,get_previous_step>>*              ..  return a handle to the previous step on the path 
+- *<<get_sequence,get_sequence>>*                        ..  return sequence of the given id of the handle 
+ 
+- *<<get_step_count,get_step_count>>*                    ..  return the step count of a given handle 
+- *<<has_edge,has_edge>>*                                ..  return true if the given edge exists in the graph
+- *<<has_next_step,has_next_step>>*                      ..  return true if the step isn't the last on the path 
+- *<<has_node,has_node>>*                                ..  return true if the given node id is in the graph
+- *<<has_path,has_path>>*                                ..  return true if the given name of the path exists
+- *<<has_previous_step,has_previous_step>>*              ..  return true if the step isn't the first step on the path
+- *<<insert_step,insert_step>>*                          ..  insert a visit to a node to the given path between the given steps
+- *<<is_empty,is_empty>>*                                ..  return false if the path isn't empty
+- *<<is_path_end,is_path_end>>*                          ..  return true if the step hand in an end handle
+- *<<is_path_front_end,is_path_front_end>>*              ..  return true if the step handle is a front end handle  
+
+- *<<get_path_count,get_path_count>>*                    ..  return the path count in the graph
 - *<<get_path_handle,get_path_handle>>*                  .. return the path handle for the named path
 - *<<get_path_handle_of_step,get_path_handle_of_step>>*  ..  returns a handle to the path that an step is on
 - *<<get_path_name,get_path_name>>*                      ..  return the path name for a given path handle 
 - *<<get_previous_step,get_previous_step>>*              ..  return a handle to the previous step on the path 
 - *<<get_sequence,get_sequence>>*                        ..  return sequence of the given id of the handle 
+
+
+
 
 [[load]]
 
