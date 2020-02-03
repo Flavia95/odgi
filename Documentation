@@ -123,6 +123,173 @@ order: List[odgi.handle],
 compact_ids: bool = False) -> None
 
 
+[[apply_orientation]]
+
+=== import odgi
+=== g = odgi.graph()
+=== g.load('/path/to/gfa')
+
+modify the node to which the specified handle corresponds and update all route links and steps to match the new orientation.
+
+*-arg0::
+
+g.handle: an oriented traversal of a node, for example pass a value of a node identifier (id) with g.get_handle
+
+
+[[apply_path_ordering]]
+
+=== import odgi
+=== g = odgi.graph()
+=== g.load('/path/to/gfa')
+
+reorder the graph's path as given
+
+*-arg0::
+
+g.path_handle: [],a reference to a path
+
+[[clear]]
+
+=== import odgi
+=== g = odgi.graph()
+=== g.load('/path/to/gfa')
+
+clears all added nodes and edges and does not update the parhs already stored
+
+[[clear_paths]]
+
+=== import odgi
+=== g = odgi.graph()
+=== g.load('/path/to/gfa')
+
+clears all path that already stored
+
+[[combine_handles]]
+
+=== import odgi
+=== g = odgi.graph()
+=== g.load('/path/to/gfa')
+
+join the handles specified in a new node. Removes the specified handles and returns the handle of the new node tied to the nodes to which the last node of the input list was tied.
+
+*-arg0::
+
+[g.handle]: list of handles
+
+[[create_edge]]
+
+=== import odgi
+=== g = odgi.graph()
+=== g.load('/path/to/gfa')
+
+create edge that connecting two given handles in the given orientations
+
+*-arg0::
+
+g.handle: first handle (an oriented traversal of a node)
+
+*-arg1::
+
+g.handle: second handle
+
+[[create_handle]]
+
+=== import odgi
+=== g = odgi.graph()
+=== g.load('/path/to/gfa')
+
+create a new node and return the handle
+
+*-arg0::
+
+str: a given sequence
+
+[[create_path_handle]]
+
+=== import odgi
+=== g = odgi.graph()
+=== g.load('/path/to/gfa')
+
+create a path but the name given to the path must not already exist
+
+*-arg0::
+
+name: str
+
+*-arg1::
+
+is_circular: bool = False
+
+[[destroy_edge]]
+
+=== import odgi
+=== g = odgi.graph()
+=== g.load('/path/to/gfa')
+
+remove the edge connecting the given handles
+
+*-arg0::
+
+g.handle: first, pass a value of a node identifier
+
+*-arg1::
+
+g.handle: second, pass a value of a node identifier
+
+
+[[destroy_handle]]
+
+=== import odgi
+=== g = odgi.graph()
+=== g.load('/path/to/gfa')
+
+remove the node belonging to the given handle and all of its edges. Invalidates the destroyed handle.
+
+*-arg0::
+
+g.handle: an oriented traversal of a node, for example pass a value of a node identifier(id) with g.get_handle
+
+
+[[destroy_path]]
+
+=== import odgi
+=== g = odgi.graph()
+=== g.load('/path/to/gfa')
+
+remove the given path and invalidates node and handles to the path
+
+*-arg0::
+
+g.handle: an oriented traversal of a node, for example pass a value of a node identifier(id) with g.get_handle
+
+
+[[divide_handle]]
+
+=== import odgi
+=== g = odgi.graph()
+=== g.load('/path/to/gfa')
+
+split a node(remember that the node is associated with a sequence) and returns the list of tha handles. 
+Each node obtained from the split, starts from the next character of the sequence of the previous node.
+
+*-arg0::
+
+g.handle: an oriented traversal of a node, for example pass a value of a node identifier that you want to split
+
+*-arg1::
+
+list of number: position of the last character of the sequence that will enter the i-th node
+
+example: g.divide_handle(g.get_handle(1), [2,5])
+
+
+
+
+
+
+
+
+
 
 
 
