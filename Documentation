@@ -48,8 +48,7 @@ Options:
 - *<<get_path_handle_of_step,get_path_handle_of_step>>*  ..  returns a handle to the path that an step is on
 - *<<get_path_name,get_path_name>>*                      ..  return the path name for a given path handle 
 - *<<get_previous_step,get_previous_step>>*              ..  return a handle to the previous step on the path 
-- *<<get_sequence,get_sequence>>*                        ..  return sequence of the given id of the handle 
- 
+- *<<get_sequence,get_sequence>>*                        ..  return sequence of the given id of the handle  
 - *<<get_step_count,get_step_count>>*                    ..  return the step count of a given handle 
 - *<<has_edge,has_edge>>*                                ..  return true if the given edge exists in the graph
 - *<<has_next_step,has_next_step>>*                      ..  return true if the step isn't the last on the path 
@@ -60,13 +59,23 @@ Options:
 - *<<is_empty,is_empty>>*                                ..  return false if the path isn't empty
 - *<<is_path_end,is_path_end>>*                          ..  return true if the step hand in an end handle
 - *<<is_path_front_end,is_path_front_end>>*              ..  return true if the step handle is a front end handle  
+- *<<max_node_id,max_node_id>>*                          ..  return the maximum value (node id) in the graph
+- *<<min_node_id,min_node_id>>*                          ..  return the minimun value (node id) in the graph
+- *<<optimize,optimize>>*                                ..  the graph is organize for better performance
+- *<<path_back,path_back>>*                              ..  return a step handle to the last step 
+- *<<path_begin,path_begin>>*                            ..  return a step handle for the first step in the path  
+- *<<path_end,path_end>>*                                ..  return a step handle to a handle one past the end of the path
+- *<<path_front_end,path_front_end>>*                    ..  return a step handle to a handle one past the start of the path   
+- *<<prepend_step,prepend_step>>*                        ..  return a handle to the new final step on the path which is appended 
+- *<<rewrite_segment,rewrite_segment>>*                  ..  replace the path range with the new segment
+- *<<serialize,serialize>>*                              ..  save the graph to the given file 
+- *<<set_circularity,set_circularity>>*                  ..  set if the path is circular or not
+- *<<set_id_increment,set_id_increment>>*                ..  defines a base increment for the node id space
+- *<<set_step,set_step>>*                                ..  set the step to the given handle
+- *<<steps_of_handle,steps_of_handle>>*                  ..  return a list of the steps handle on a given handle
+- *<<to_gfa,to_gfa>>*                                    ..  display odgi.graph as GFA
 
-- *<<get_path_count,get_path_count>>*                    ..  return the path count in the graph
-- *<<get_path_handle,get_path_handle>>*                  .. return the path handle for the named path
-- *<<get_path_handle_of_step,get_path_handle_of_step>>*  ..  returns a handle to the path that an step is on
-- *<<get_path_name,get_path_name>>*                      ..  return the path name for a given path handle 
-- *<<get_previous_step,get_previous_step>>*              ..  return a handle to the previous step on the path 
-- *<<get_sequence,get_sequence>>*                        ..  return sequence of the given id of the handle 
+
 
 
 
