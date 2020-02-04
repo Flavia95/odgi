@@ -1,3 +1,7 @@
+NAME
+----
+odgi - utilities for manipulating Graphical Fragment Assembly (GFA) Format Specification
+
 ./odgi <command> [options]
 
 --build.. convert gfa in odgi i.e. variation graph
