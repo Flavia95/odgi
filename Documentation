@@ -1000,7 +1000,7 @@ bool: True of False. False, by default, we get the forward handle
 
 === to_gfa()
 
-display odgi.graph ad a GFA
+display odgi.graph as a GFA
 
 ---------------------------------------------------------------------
 example:
